@@ -8,6 +8,8 @@ from EmployeeApp.serializers import DepartmentSerializer, EmployeeSerializer
 
 # Create your views here.
 
+# API methods for Department Table
+
 
 @csrf_exempt
 def departmentApi(request, id=0):
