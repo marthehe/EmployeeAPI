@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
@@ -7,6 +7,10 @@ from EmployeeApp.models import Departments, Employees
 from EmployeeApp.serializers import DepartmentSerializer, EmployeeSerializer
 
 # Create your views here.
+
+
+def Index(request):
+    return HttpResponse("It is working")
 
 # API methods for Department Table
 
