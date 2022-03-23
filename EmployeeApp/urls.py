@@ -11,7 +11,7 @@ router.register('user', UserViewSet)
 
 urlpatterns = [
 
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     # url(r'^department$', views.DepartmentViewSet),
     # url(r'^department/([0-9]+)$', views.DepartmentViewSet),
 
