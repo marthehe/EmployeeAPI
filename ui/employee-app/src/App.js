@@ -8,7 +8,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App container">
-        <h3 className="d-flex justify-content-center m-3">React JS Frontend</h3>
+        <h3 className="d-flex justify-content-center m-3">
+          Employee Managment App
+        </h3>
         <nav className="navbar navbar-expand-sm bg-light navbar-dark">
           <ul className="navbar-nav">
             <li className="nav-item- m-1">
