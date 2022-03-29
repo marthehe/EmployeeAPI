@@ -3,6 +3,7 @@ from pkg_resources import DefaultProvider
 from EmployeeApp import views
 from .views import DepartmentViewSet, EmployeeViewSet, UserViewSet
 from rest_framework.routers import DefaultRouter
+#from django.conf.urls import url
 
 router = DefaultRouter()
 router.register('department', DepartmentViewSet, basename='department')
