@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { variables } from "./Variables.js";
 
+const headers = new Headers();
+headers.append(
+  "Authorization",
+  "Token f6ef24924526ee0c17a6f5ba0e87c108afebd6cd"
+);
+
 export class Department extends Component {
   constructor(props) {
     super(props);
@@ -59,7 +65,11 @@ export class Department extends Component {
   };
 
   refreshList() {
-    fetch(variables.API_URL + "department")
+    var requestOptions = {
+      method: "GET",
+      headers: headers,
+    };
+    fetch(variables.API_URL + "department", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ departments: data, departmentsWithoutFilter: data });
