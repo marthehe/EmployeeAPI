@@ -1,3 +1,4 @@
+from posixpath import basename
 from django.urls import path, include
 from pkg_resources import DefaultProvider
 from EmployeeApp import views
@@ -8,7 +9,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('department', DepartmentViewSet, basename='department')
 router.register('employee', EmployeeViewSet, basename='employee')
-router.register('user', UserViewSet)
+router.register('user', UserViewSet, basename='user')
 
 urlpatterns = [
 
