@@ -6,7 +6,13 @@ export default class UserAPIService {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    }).then((resp) => resp.json());
+    }).then((resp) => {
+      if (!resp.ok) {
+        throw new Error("Network response was not OK");
+      }
+
+      return resp.json();
+    });
   }
 
   static RegisterUser(body) {
@@ -16,6 +22,12 @@ export default class UserAPIService {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    }).then((resp) => resp.json());
+    }).then((resp) => {
+      if (!resp.ok) {
+        throw new Error("Network response was not OK");
+      }
+
+      return resp.json();
+    });
   }
 }

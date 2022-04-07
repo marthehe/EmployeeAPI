@@ -6,11 +6,12 @@ import { useHistory } from "react-router-dom";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useCookies(["mytoken"]);
+  const [token, setToken] = useCookies();
   const [isLogin, setLogin] = useState(true);
   let history = useHistory();
 
   useEffect(() => {
+    console.log(token);
     if (token["mytoken"]) {
       history.push("/home");
     }
@@ -18,7 +19,10 @@ function Login() {
 
   const loginUser = () => {
     UserAPIService.LoginUser({ username, password })
-      .then((resp) => setToken("mytoken", resp.token))
+      .then((resp) => {
+        console.log("resp", resp);
+        return setToken("mytoken", resp.token);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -58,7 +62,7 @@ function Login() {
         <input
           type="text"
           className="form-control"
-          id="passowrd"
+          id="password"
           placeholder="Please Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -76,6 +80,7 @@ function Login() {
 
       <div className="mb-3">
         <br />
+
         {isLogin ? (
           <h5>
             If You Don't Have Account, Please{" "}
