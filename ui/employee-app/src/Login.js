@@ -11,7 +11,6 @@ function Login() {
   let history = useHistory();
 
   useEffect(() => {
-    console.log(token);
     if (token["mytoken"]) {
       history.push("/home");
     }
