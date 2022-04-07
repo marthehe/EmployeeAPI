@@ -37,37 +37,37 @@ function Login() {
       <br />
       <br />
       {isLogin ? <h1>Please Login</h1> : <h1>Please Register</h1>}
+      <form>
+        <div className="ms-5 me-5 mb-3">
+          <br />
+          <br />
+          <label htmlFor="username" className="form-label">
+            Username
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="username"
+            placeholder="Please Enter Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="ms-5 me-5 mb-3 mb-3">
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="password"
+            placeholder="Please Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+      </form>
 
-      <div className="mb-3">
-        <br />
-        <br />
-        <label htmlFor="username" className="form-label">
-          Username
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="username"
-          placeholder="Please Enter Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div className="mb-3">
-        <br />
-        <br />
-        <label htmlFor="password" className="form-label">
-          Password
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="password"
-          placeholder="Please Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
       {isLogin ? (
         <button onClick={loginUser} className="btn btn-primary">
           Login
