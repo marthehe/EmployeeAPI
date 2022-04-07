@@ -19,7 +19,6 @@ function Login() {
   const loginUser = () => {
     UserAPIService.LoginUser({ username, password })
       .then((resp) => {
-        console.log("resp", resp);
         return setToken("mytoken", resp.token);
       })
       .catch((error) => console.log(error));
