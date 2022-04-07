@@ -33,4 +33,21 @@ describe("Login test", function () {
     // - make an assertion about page content
     cy.url().should("include", "home");
   });
+
+  //When incorrect username and password were provided user should not be redirected to Home Page
+
+  it("should not be redirect to Home page when incorrect user details are provided", function () {
+    cy.visit("/");
+
+    //Act - take an action
+    // interact with it that element
+    cy.get("input#username").type("ffffff");
+    cy.get("input#password").type("blablabla");
+
+    cy.get("button").contains("Login").click();
+
+    //Assert - make an assertion
+    // - make an assertion about page content
+    cy.url().should("not.include", "home");
+  });
 });
