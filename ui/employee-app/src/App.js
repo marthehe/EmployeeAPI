@@ -7,7 +7,7 @@ import { useCookies } from "react-cookie";
 import { useHistory } from "react-router-dom";
 
 function App() {
-  const [token, removeToken] = useCookies(["mytoken"]);
+  const [token, setToken, removeToken] = useCookies();
   let history = useHistory();
 
   const logoutUser = () => {
@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     if (!token["mytoken"]) {
-      window.location.href = "/";
+      history.push("/");
     }
   }, [token]);
 
