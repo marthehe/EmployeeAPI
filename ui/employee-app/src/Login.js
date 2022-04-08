@@ -1,3 +1,16 @@
+/*
+Course: Digital and Technology Solutions
+Module: Software Engineering & Agile
+Project Name: Development & Employee Information Management System
+Author: Marta Hendel
+Version: 1
+Date: 08.04.22
+
+References used within this application:
+Forogh, P.(2 january 2021) Django & ReactJS Full Stack Course. Available at:
+https://www.youtube.com/watch?v=VBqJ0-imSMU (Accessed at: 4 February 2022) [1]
+*/
+
 import React, { useState, useEffect } from "react";
 import UserAPIService from "./UserAPIService";
 import { useCookies } from "react-cookie";
@@ -29,7 +42,7 @@ function Login() {
       .then((resp) => loginUser())
       .catch((error) => console.log(error));
   };
-
+  // P. Forogh (2021) [1] - START
   return (
     <div className="Login">
       <br />
@@ -99,6 +112,7 @@ function Login() {
       </div>
     </div>
   );
+  // P.Forogh(2021)[1] - END;
 }
 
 export default Login;

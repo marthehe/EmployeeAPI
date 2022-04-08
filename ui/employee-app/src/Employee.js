@@ -1,3 +1,16 @@
+/*
+Course: Digital and Technology Solutions
+Module: Software Engineering & Agile
+Project Name: Development & Employee Information Management System
+Author: Marta Hendel
+Version: 1
+Date: 08.04.22
+
+References used within this application:
+Art Of Engineer (12 July 2021) React JS + Python Django + SQLite. Available at:
+https://github.com/ArtOfEngineer/ReactJs-Django-SQLite (Accessed at: 2 February 2022) [1]
+*/
+
 import { useState, useEffect } from "react";
 import EmployeeForm from "./EmployeeForm";
 import EmployeeAPIService from "./EmployeeAPIService";
@@ -66,7 +79,7 @@ function Employee() {
       setEmployees(new_employee);
     });
   };
-
+  // Art of Engineer (2021) [1] - START
   return (
     <div>
       <button
@@ -148,6 +161,7 @@ function Employee() {
       ) : null}
     </div>
   );
+  //Art of Engineer (2021) [1] - END
 }
 
 export default Employee;

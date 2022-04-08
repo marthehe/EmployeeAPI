@@ -1,3 +1,16 @@
+/*
+Course: Digital and Technology Solutions
+Module: Software Engineering & Agile
+Project Name: Development & Employee Information Management System
+Author: Marta Hendel
+Version: 1
+Date: 08.04.22
+
+References used within this application:
+Art Of Engineer (12 July 2021) React JS + Python Django + SQLite. Available at:
+https://github.com/ArtOfEngineer/ReactJs-Django-SQLite (Accessed at: 2 February 2022) [1]
+*/
+
 import { useState, useEffect } from "react";
 import DepartmentForm from "./DepartmentForm";
 import DepartmentAPIService from "./DepartmentAPIService";
@@ -64,7 +77,7 @@ function Department() {
       setDepartments(new_department);
     });
   };
-
+  // Art of Engineer (2021) [1] - START
   return (
     <div>
       <button
@@ -93,8 +106,6 @@ function Department() {
                 <button
                   type="button"
                   className="btn btn-light mr-1"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
                   onClick={() => editClick(department)}
                 >
                   <svg
@@ -134,6 +145,7 @@ function Department() {
           ))}
         </tbody>
       </table>
+
       <br />
       {editDepartment ? (
         <DepartmentForm
@@ -144,6 +156,7 @@ function Department() {
       ) : null}
     </div>
   );
+  //Art of Engineer (2021) [1] - END
 }
 
 export default Department;
